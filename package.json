@@ -1,7 +1,7 @@
 {
-  "name": "@technote-space/gh-actions-template",
-  "version": "0.1.1",
-  "description": "Template for GitHub actions.",
+  "name": "@technote-space/get-git-comment-action",
+  "version": "0.0.1",
+  "description": "GitHub actions to get git comment.",
   "author": {
     "name": "Technote",
     "email": "technote.space@gmail.com",
@@ -12,13 +12,13 @@
     "github",
     "github actions"
   ],
-  "homepage": "https://github.com/technote-space/gh-actions-template",
+  "homepage": "https://github.com/technote-space/get-git-comment-action",
   "repository": {
     "type": "git",
-    "url": "https://github.com/technote-space/gh-actions-template.git"
+    "url": "https://github.com/technote-space/get-git-comment-action.git"
   },
   "bugs": {
-    "url": "https://github.com/technote-space/gh-actions-template/issues"
+    "url": "https://github.com/technote-space/get-git-comment-action/issues"
   },
   "files": [
     "lib",
@@ -27,7 +27,6 @@
   "dependencies": {
     "@actions/core": "^1.2.2",
     "@actions/github": "^2.1.0",
-    "@technote-space/filter-github-action": "^0.2.0",
     "@technote-space/github-action-helper": "^0.8.4"
   },
   "devDependencies": {
@@ -47,7 +46,6 @@
     "access": "public"
   },
   "scripts": {
-    "setup": "bash bin/setup.sh && rm -rdf bin",
     "build": "tsc",
     "test": "yarn lint && yarn cover",
     "lint": "eslint 'src/**/*.ts' '__tests__/**/*.ts' --cache",
