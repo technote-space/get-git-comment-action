@@ -1,0 +1,35 @@
+# https://help.github.com/ja/articles/metadata-syntax-for-github-actions
+name: Get git comment action
+
+description: GitHub actions to get git comment.
+
+author: technote-space
+
+inputs:
+  SEPARATOR:
+    description: Separator of multiline messages.
+    default: ' '
+    required: true
+  FORMAT:
+    description: Format of git log.
+    default: '%B'
+    required: true
+  SET_ENV_NAME:
+    description: Env name.
+    default: COMMIT_MESSAGE
+    required: false
+
+outputs:
+  message:
+    description: git commit message
+
+branding:
+  # https://feathericons.com/
+  icon: 'message-square'
+  color: 'blue'
+
+runs:
+  using: node12
+  main: lib/main.js
+#  post: lib/post.js
+#  post-if: 'success()'
