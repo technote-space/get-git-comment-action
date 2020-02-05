@@ -1,26 +1,31 @@
-# https://help.github.com/ja/articles/metadata-syntax-for-github-actions
-name: GitHub Actions Template
+name: Get git comment action
 
-description: Template for GitHub actions.
+description: GitHub actions to get git comment.
 
 author: technote-space
 
 inputs:
-  GITHUB_TOKEN:
-    description: Secret GitHub API token to use for making API requests.
+  SEPARATOR:
+    description: Separator of multiline messages.
+    default: ' '
     required: true
+  FORMAT:
+    description: Format of git log.
+    default: '%B'
+    required: true
+  SET_ENV_NAME:
+    description: Env name.
+    default: COMMIT_MESSAGE
+    required: false
 
-#outputs:
-#  result:
-#    description: action result
+outputs:
+  message:
+    description: git commit message
 
 branding:
-  # https://feathericons.com/
-  icon: 'package'
-  color: 'orange'
+  icon: 'message-square'
+  color: 'blue'
 
 runs:
   using: node12
   main: lib/main.js
-#  post: lib/post.js
-#  post-if: 'success()'
