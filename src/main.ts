@@ -15,4 +15,5 @@ async function run(): Promise<void> {
 	await execute(logger, context);
 }
 
+
 run().catch(error => setFailed(error.message));
