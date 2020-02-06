@@ -45,10 +45,10 @@ jobs:
       - uses: technote-space/get-git-comment-action@v1
       - name: Install Package dependencies
         run: yarn install
-        if: contains(env.COMMIT_MESSAGE, '[skip ci]') || contains(env.COMMIT_MESSAGE, '[ci skip]')
+        if: "! contains(env.COMMIT_MESSAGE, '[skip ci]') && ! contains(env.COMMIT_MESSAGE, '[ci skip]')"
       - name: Check code style
         run: yarn test
-        if: contains(env.COMMIT_MESSAGE, '[skip ci]') || contains(env.COMMIT_MESSAGE, '[ci skip]')
+        if: "! contains(env.COMMIT_MESSAGE, '[skip ci]') && ! contains(env.COMMIT_MESSAGE, '[ci skip]')"
 ```
 
 ## Outputs
