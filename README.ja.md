@@ -7,7 +7,7 @@
 
 *Read this in other languages: [English](README.md), [日本語](README.ja.md).*
 
-GitHub actions to get git comment.
+これは Git コメントを取得する `GitHub Actions` です。
 
 ## Table of Contents
 
@@ -16,26 +16,26 @@ GitHub actions to get git comment.
 <details>
 <summary>Details</summary>
 
-- [Screenshots](#screenshots)
+- [スクリーンショット](#%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88)
   - [Skip CI](#skip-ci)
   - [Not skip CI](#not-skip-ci)
-- [Usage](#usage)
-- [Outputs](#outputs)
+- [使用方法](#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
+- [出力](#%E5%87%BA%E5%8A%9B)
   - [message](#message)
 - [Author](#author)
 
 </details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Screenshots
+## スクリーンショット
 ### Skip CI
 ![skip ci](https://raw.githubusercontent.com/technote-space/get-git-comment-action/images/skip.png)
 
 ### Not skip CI
 ![not skip ci](https://raw.githubusercontent.com/technote-space/get-git-comment-action/images/not_skip.png)
 
-## Usage
-e.g.
+## 使用方法
+例：
 ```yaml
 on:
   pull_request:
@@ -60,34 +60,34 @@ jobs:
         if: "! contains(env.COMMIT_MESSAGE, '[skip ci]') && ! contains(env.COMMIT_MESSAGE, '[ci skip]')"
 ```
 
-## Outputs
+## 出力
 ### message
 #### if eventName == push
 `payload.head_commit.message`
 #### else
 1. `git log --format=%B {{ sha }}`
 
-   e.g.
+   例：
    ```
    test1 test2  
    
    test3
    ```
-1. Split at line break
+1. 改行で分割
 
-   e.g.
+   例：
    ```
    ['test1 test2', '', 'test3']
    ```
-1. Trim and filter
+1. トリム及び空白行の削除
 
-   e.g.
+   例：
    ```
    ['test1 test2', 'test3']
    ```
-1. Combine by `SEPARATOR` option
+1. `SEPARATOR` オプションの値で結合
 
-   e.g.
+   例：
    ```
    test1 test2 test3
    ```
