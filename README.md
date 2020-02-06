@@ -17,6 +17,8 @@ GitHub actions to get git comment.
 <summary>Details</summary>
 
 - [Screenshots](#screenshots)
+  - [Skip CI](#skip-ci)
+  - [Not skip CI](#not-skip-ci)
 - [Usage](#usage)
 - [Outputs](#outputs)
   - [message](#message)
