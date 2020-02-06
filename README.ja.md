@@ -16,9 +16,11 @@
 <details>
 <summary>Details</summary>
 
-- [Screenshots](#screenshots)
-- [Usage](#usage)
-- [Outputs](#outputs)
+- [スクリーンショット](#%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88)
+  - [Skip CI](#skip-ci)
+  - [Not skip CI](#not-skip-ci)
+- [使用方法](#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
+- [出力](#%E5%87%BA%E5%8A%9B)
   - [message](#message)
 - [Author](#author)
 
