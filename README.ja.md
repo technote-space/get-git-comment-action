@@ -7,7 +7,7 @@
 
 *Read this in other languages: [English](README.md), [日本語](README.ja.md).*
 
-GitHub actions to get git comment.
+これは Git コメントを取得する `GitHub Actions` です。
 
 ## Table of Contents
 
@@ -25,15 +25,15 @@ GitHub actions to get git comment.
 </details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Screenshots
+## スクリーンショット
 ### Skip CI
 ![skip ci](https://raw.githubusercontent.com/technote-space/get-git-comment-action/images/skip.png)
 
 ### Not skip CI
 ![not skip ci](https://raw.githubusercontent.com/technote-space/get-git-comment-action/images/not_skip.png)
 
-## Usage
-e.g.
+## 使用方法
+例：
 ```yaml
 on:
   pull_request:
@@ -58,34 +58,34 @@ jobs:
         if: "! contains(env.COMMIT_MESSAGE, '[skip ci]') && ! contains(env.COMMIT_MESSAGE, '[ci skip]')"
 ```
 
-## Outputs
+## 出力
 ### message
 #### if eventName == push
 `payload.head_commit.message`
 #### else
 1. `git log --format=%B {{ sha }}`
 
-   e.g.
+   例：
    ```
    test1 test2  
    
    test3
    ```
-1. Split at line break
+1. 改行で分割
 
-   e.g.
+   例：
    ```
    ['test1 test2', '', 'test3']
    ```
-1. Trim and filter
+1. トリム及び空白行の削除
 
-   e.g.
+   例：
    ```
    ['test1 test2', 'test3']
    ```
-1. Combine by `SEPARATOR` option
+1. `SEPARATOR` オプションの値で結合
 
-   e.g.
+   例：
    ```
    test1 test2 test3
    ```
