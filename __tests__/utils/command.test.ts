@@ -1,6 +1,13 @@
 /* eslint-disable no-magic-numbers */
 import path from 'path';
-import { getContext, testEnv, spyOnExec, testChildProcess, execCalledWith, setChildProcessParams } from '@technote-space/github-action-test-helper';
+import {
+	getContext,
+	testEnv,
+	spyOnExec,
+	testChildProcess,
+	execCalledWith,
+	setChildProcessParams,
+} from '@technote-space/github-action-test-helper';
 import { getCommitMessage } from '../../src/utils/command';
 
 const rootDir = path.resolve(__dirname, '../..');

@@ -6,10 +6,9 @@ import {
 	spyOnStdout,
 	stdoutCalledWith,
 	spyOnExec,
-	execCalledWith,
 	testChildProcess,
 	setChildProcessParams,
-	execContains, stdoutContains,
+	execContains,
 } from '@technote-space/github-action-test-helper';
 import { Logger } from '@technote-space/github-action-helper';
 import { setResult, execute } from '../src/process';
