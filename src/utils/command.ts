@@ -60,5 +60,5 @@ export const getCommitMessage = async(context: Context): Promise<string> => {
 		command: 'git log',
 		args: ['-1', '--format=' + getFormat(), sha],
 		cwd: Utils.getWorkspace(),
-	})).stdout).map(item => item.trim()).filter(item => '' !== item).join(getSeparator());
+	})).stdout).map(item => item.trim()).filter(item => item).join(getSeparator());
 };
