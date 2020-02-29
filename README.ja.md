@@ -97,6 +97,10 @@ jobs:
    1. context.payload.deployment.sha
    1. context.sha
 
+## Why?
+`[ci skip]` を実現する方法として `head_commit.message` の紹介がよくありますが、もちろん pull_request イベントなどでは使用できません。  
+このアクションを使用することで push 以外でもコメントを取得することが可能になります。
+
 ## Author
 [GitHub (Technote)](https://github.com/technote-space)  
 [Blog](https://technote.space)
