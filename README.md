@@ -22,6 +22,7 @@ GitHub actions to get git comment.
 - [Usage](#usage)
 - [Outputs](#outputs)
   - [message](#message)
+- [Why?](#why)
 - [Author](#author)
 
 </details>

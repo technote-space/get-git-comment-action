@@ -22,6 +22,7 @@
 - [使用方法](#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
 - [出力](#%E5%87%BA%E5%8A%9B)
   - [message](#message)
+- [Why?](#why)
 - [Author](#author)
 
 </details>
