@@ -22,6 +22,7 @@ GitHub actions to get git comment.
 - [Usage](#usage)
 - [Outputs](#outputs)
   - [message](#message)
+- [Why?](#why)
 - [Author](#author)
 
 </details>
@@ -96,6 +97,10 @@ jobs:
    1. context.payload.pull_request.head.sha
    1. context.payload.deployment.sha
    1. context.sha
+
+## Why?
+`head_commit.message` is often introduced as a way to implement `[ci skip]`, but of course it cannot be used in pull_request events.  
+By using this action, you can get comments other than `push` event.
 
 ## Author
 [GitHub (Technote)](https://github.com/technote-space)  
