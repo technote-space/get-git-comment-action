@@ -5,7 +5,7 @@ import {
 	testEnv,
 	spyOnStdout,
 	stdoutCalledWith,
-	spyOnExec,
+	spyOnSpawn,
 	testChildProcess,
 	setChildProcessParams,
 	execContains,
@@ -46,7 +46,7 @@ describe('execute', () => {
 	testChildProcess();
 
 	it('should execute', async() => {
-		const mockExec   = spyOnExec();
+		const mockExec   = spyOnSpawn();
 		const mockStdout = spyOnStdout();
 		setChildProcessParams({
 			stdout: (command: string): string => {
