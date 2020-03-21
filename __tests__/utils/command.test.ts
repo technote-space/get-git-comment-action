@@ -3,7 +3,7 @@ import path from 'path';
 import {
 	getContext,
 	testEnv,
-	spyOnExec,
+	spyOnSpawn,
 	testChildProcess,
 	execCalledWith,
 	setChildProcessParams,
@@ -17,7 +17,7 @@ describe('getCommitMessage', () => {
 	testChildProcess();
 
 	it('should return commit message (push)', async() => {
-		const mockExec = spyOnExec();
+		const mockExec = spyOnSpawn();
 		setChildProcessParams({
 			stdout: (command: string): string => {
 				if (command.startsWith('git log')) {
@@ -42,7 +42,7 @@ describe('getCommitMessage', () => {
 	});
 
 	it('should return commit message (pull request)', async() => {
-		const mockExec = spyOnExec();
+		const mockExec = spyOnSpawn();
 		setChildProcessParams({
 			stdout: (command: string): string => {
 				if (command.startsWith('git log')) {
@@ -73,7 +73,7 @@ describe('getCommitMessage', () => {
 	});
 
 	it('should return commit message (deployment)', async() => {
-		const mockExec = spyOnExec();
+		const mockExec = spyOnSpawn();
 		setChildProcessParams({
 			stdout: (command: string): string => {
 				if (command.startsWith('git log')) {
@@ -102,7 +102,7 @@ describe('getCommitMessage', () => {
 	});
 
 	it('should return commit message (create tag)', async() => {
-		const mockExec = spyOnExec();
+		const mockExec = spyOnSpawn();
 		setChildProcessParams({
 			stdout: (command: string): string => {
 				if (command.startsWith('git log')) {
@@ -124,7 +124,7 @@ describe('getCommitMessage', () => {
 	});
 
 	it('should return commit message (schedule)', async() => {
-		const mockExec = spyOnExec();
+		const mockExec = spyOnSpawn();
 		setChildProcessParams({
 			stdout: (command: string): string => {
 				if (command.startsWith('git log')) {
@@ -153,7 +153,7 @@ describe('getCommitMessage', () => {
 		process.env.INPUT_SEPARATOR = '::';
 		process.env.INPUT_FORMAT    = '%an';
 
-		const mockExec = spyOnExec();
+		const mockExec = spyOnSpawn();
 		setChildProcessParams({
 			stdout: (command: string): string => {
 				if (command.startsWith('git log')) {
@@ -178,7 +178,7 @@ describe('getCommitMessage', () => {
 	it('should return commit message (set env 2)', async() => {
 		process.env.INPUT_SEPARATOR = '';
 
-		const mockExec = spyOnExec();
+		const mockExec = spyOnSpawn();
 		setChildProcessParams({
 			stdout: '',
 		});
