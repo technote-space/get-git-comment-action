@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/get-git-comment-action",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "GitHub actions to get git comment.",
   "author": {
     "name": "Technote",
