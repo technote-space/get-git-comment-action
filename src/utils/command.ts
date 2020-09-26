@@ -1,5 +1,6 @@
 import {Context} from '@actions/github/lib/context';
-import {Logger, Command, Utils} from '@technote-space/github-action-helper';
+import {Command, Utils} from '@technote-space/github-action-helper';
+import {Logger} from '@technote-space/github-action-log-helper';
 import {getInput} from '@actions/core' ;
 
 // 1. get directly
