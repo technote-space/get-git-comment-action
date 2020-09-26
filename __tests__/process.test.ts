@@ -9,6 +9,8 @@ import {
   testChildProcess,
   setChildProcessParams,
   execContains,
+  spyOnExportVariable,
+  exportVariableCalledWith,
 } from '@technote-space/github-action-test-helper';
 import {Logger} from '@technote-space/github-action-log-helper';
 import {setResult, execute} from '../src/process';
@@ -20,12 +22,15 @@ describe('setResult', () => {
 
   it('should set result', () => {
     const mockStdout = spyOnStdout();
+    const mockEnv    = spyOnExportVariable();
 
     setResult('test message');
 
     stdoutCalledWith(mockStdout, [
       '::set-output name=message::test message',
-      '::set-env name=COMMIT_MESSAGE::test message',
+    ]);
+    exportVariableCalledWith(mockEnv, [
+      {name: 'COMMIT_MESSAGE', val: 'test message'},
     ]);
   });
 
@@ -48,6 +53,7 @@ describe('execute', () => {
   it('should execute', async() => {
     const mockExec   = spyOnSpawn();
     const mockStdout = spyOnStdout();
+    const mockEnv    = spyOnExportVariable();
     setChildProcessParams({
       stdout: (command: string): string => {
         if (command.startsWith('git log')) {
@@ -83,10 +89,12 @@ describe('execute', () => {
       '  >> ',
       '  >> test3',
       '::set-output name=message::test1 test2 test3',
-      '::set-env name=COMMIT_MESSAGE::test1 test2 test3',
       '::group::Dump output',
       '"message: "',
       '::endgroup::',
+    ]);
+    exportVariableCalledWith(mockEnv, [
+      {name: 'COMMIT_MESSAGE', val: 'test1 test2 test3'},
     ]);
   });
 });
