@@ -27,6 +27,7 @@ describe('setResult', () => {
     setResult('test message');
 
     stdoutCalledWith(mockStdout, [
+      '',
       '::set-output name=message::test message',
     ]);
     exportVariableCalledWith(mockEnv, [
@@ -41,6 +42,7 @@ describe('setResult', () => {
     setResult('');
 
     stdoutCalledWith(mockStdout, [
+      '',
       '::set-output name=message::',
     ]);
   });
@@ -88,6 +90,7 @@ describe('execute', () => {
       '  >> test2',
       '  >> ',
       '  >> test3',
+      '',
       '::set-output name=message::test1 test2 test3',
       '::group::Dump output',
       '"message: "',
