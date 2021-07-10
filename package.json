@@ -47,7 +47,7 @@
     "@technote-space/github-action-test-helper": "^0.7.16",
     "@technote-space/release-github-actions-cli": "^1.8.6",
     "@types/jest": "^26.0.24",
-    "@types/node": "^16.0.0",
+    "@types/node": "^16.3.1",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "eslint": "^7.30.0",
