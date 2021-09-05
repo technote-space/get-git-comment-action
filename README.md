@@ -1,9 +1,9 @@
 # Get git comment action
 
 [![CI Status](https://github.com/technote-space/get-git-comment-action/workflows/CI/badge.svg)](https://github.com/technote-space/get-git-comment-action/actions)
-[![codecov](https://codecov.io/gh/technote-space/get-git-comment-action/branch/master/graph/badge.svg)](https://codecov.io/gh/technote-space/get-git-comment-action)
+[![codecov](https://codecov.io/gh/technote-space/get-git-comment-action/branch/main/graph/badge.svg)](https://codecov.io/gh/technote-space/get-git-comment-action)
 [![CodeFactor](https://www.codefactor.io/repository/github/technote-space/get-git-comment-action/badge)](https://www.codefactor.io/repository/github/technote-space/get-git-comment-action)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/technote-space/get-git-comment-action/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/technote-space/get-git-comment-action/blob/main/LICENSE)
 
 *Read this in other languages: [English](README.md), [日本語](README.ja.md).*
 
@@ -42,7 +42,7 @@ on:
   pull_request:
   push:
     branches:
-      - master
+      - main
     tags:
       - "!*"
 name: CI
