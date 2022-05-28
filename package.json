@@ -42,7 +42,7 @@
     "@technote-space/github-action-helper": "^5.3.5"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.0.0",
+    "@commitlint/cli": "^17.0.1",
     "@commitlint/config-conventional": "^17.0.0",
     "@technote-space/github-action-test-helper": "^0.9.5",
     "@technote-space/release-github-actions-cli": "^1.9.0",
