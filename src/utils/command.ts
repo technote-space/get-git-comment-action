@@ -1,7 +1,7 @@
 import type { Context } from '@actions/github/lib/context';
-import { Command, Utils } from '@technote-space/github-action-helper';
 import type { Logger } from '@technote-space/github-action-log-helper';
 import { getInput } from '@actions/core' ;
+import { Command, Utils } from '@technote-space/github-action-helper';
 
 // 1. get directly
 //   1. payload.head_commit.message		// push

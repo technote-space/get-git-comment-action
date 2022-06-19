@@ -1,6 +1,6 @@
 /* eslint-disable no-magic-numbers */
-import { describe, expect, it } from 'vitest';
 import path from 'path';
+import { Logger } from '@technote-space/github-action-log-helper';
 import {
   getContext,
   testEnv,
@@ -9,7 +9,7 @@ import {
   execCalledWith,
   setChildProcessParams,
 } from '@technote-space/github-action-test-helper';
-import { Logger } from '@technote-space/github-action-log-helper';
+import { describe, expect, it } from 'vitest';
 import { getCommitMessage } from './command';
 
 const rootDir = path.resolve(__dirname, '../..');

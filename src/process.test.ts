@@ -1,6 +1,6 @@
 /* eslint-disable no-magic-numbers */
-import { describe, it } from 'vitest';
 import path from 'path';
+import { Logger } from '@technote-space/github-action-log-helper';
 import {
   getContext,
   testEnv,
@@ -13,7 +13,7 @@ import {
   spyOnExportVariable,
   exportVariableCalledWith,
 } from '@technote-space/github-action-test-helper';
-import { Logger } from '@technote-space/github-action-log-helper';
+import { describe, it } from 'vitest';
 import { setResult, execute } from './process';
 
 const rootDir = path.resolve(__dirname, '..');
