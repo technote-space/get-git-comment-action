@@ -1,6 +1,6 @@
-import { Context } from '@actions/github/lib/context';
+import type { Context } from '@actions/github/lib/context';
 import { Command, Utils } from '@technote-space/github-action-helper';
-import { Logger } from '@technote-space/github-action-log-helper';
+import type { Logger } from '@technote-space/github-action-log-helper';
 import { getInput } from '@actions/core' ;
 
 // 1. get directly
@@ -40,13 +40,13 @@ const getTarget = (context: Context): { ref: string; sha: string } => {
   };
 };
 
-export const getCommitMessage = async(context: Context): Promise<string> => {
+export const getCommitMessage = async(logger: Logger, context: Context): Promise<string> => {
   const headCommitMessage = getHeadCommitMessage(context);
   if (headCommitMessage !== undefined) {
     return headCommitMessage;
   }
 
-  const command      = new Command(new Logger());
+  const command      = new Command(logger);
   const { ref, sha } = getTarget(context);
   if (Utils.getPrefixRegExp(branchRefsPrefix).test(ref)) {
     await command.execAsync({

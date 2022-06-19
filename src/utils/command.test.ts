@@ -9,9 +9,11 @@ import {
   execCalledWith,
   setChildProcessParams,
 } from '@technote-space/github-action-test-helper';
+import { Logger } from '@technote-space/github-action-log-helper';
 import { getCommitMessage } from './command';
 
 const rootDir = path.resolve(__dirname, '../..');
+const logger    = new Logger();
 
 describe('getCommitMessage', () => {
   testEnv(rootDir);
@@ -28,7 +30,7 @@ describe('getCommitMessage', () => {
       },
     });
 
-    expect(await getCommitMessage(getContext({
+    expect(await getCommitMessage(logger, getContext({
       eventName: 'push',
       ref: 'refs/heads/master',
       sha: '1111',
@@ -53,7 +55,7 @@ describe('getCommitMessage', () => {
       },
     });
 
-    expect(await getCommitMessage(getContext({
+    expect(await getCommitMessage(logger, getContext({
       eventName: 'pull_request',
       ref: 'refs/pull/11/merge',
       sha: '1111',
@@ -84,7 +86,7 @@ describe('getCommitMessage', () => {
       },
     });
 
-    expect(await getCommitMessage(getContext({
+    expect(await getCommitMessage(logger, getContext({
       eventName: 'deployment',
       ref: 'refs/heads/master',
       sha: '1111',
@@ -113,7 +115,7 @@ describe('getCommitMessage', () => {
       },
     });
 
-    expect(await getCommitMessage(getContext({
+    expect(await getCommitMessage(logger, getContext({
       eventName: 'create',
       ref: 'refs/tags/v1.2.3',
       sha: '1111',
@@ -135,7 +137,7 @@ describe('getCommitMessage', () => {
       },
     });
 
-    expect(await getCommitMessage(getContext({
+    expect(await getCommitMessage(logger, getContext({
       eventName: 'schedule',
       ref: 'refs/heads/master',
       sha: '1111',
@@ -164,7 +166,7 @@ describe('getCommitMessage', () => {
       },
     });
 
-    expect(await getCommitMessage(getContext({
+    expect(await getCommitMessage(logger, getContext({
       eventName: 'create',
       ref: 'refs/heads/master',
       sha: '1111',
@@ -184,7 +186,7 @@ describe('getCommitMessage', () => {
       stdout: '',
     });
 
-    expect(await getCommitMessage(getContext({
+    expect(await getCommitMessage(logger, getContext({
       eventName: 'create',
       ref: 'refs/heads/master',
       sha: '1111',

@@ -1,5 +1,5 @@
-import { Context } from '@actions/github/lib/context';
-import { Logger } from '@technote-space/github-action-log-helper';
+import type { Context } from '@actions/github/lib/context';
+import type { Logger } from '@technote-space/github-action-log-helper';
 import { exportVariable, getInput, setOutput } from '@actions/core' ;
 import { getCommitMessage } from './utils/command';
 
@@ -18,7 +18,7 @@ export const dumpResult = (message: string, logger: Logger): void => {
 };
 
 export const execute = async(logger: Logger, context: Context): Promise<void> => {
-  const message = await getCommitMessage(context);
+  const message = await getCommitMessage(logger, context);
   setResult(message);
   dumpResult(message, logger);
 };
