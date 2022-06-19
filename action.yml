@@ -8,11 +8,11 @@ inputs:
   SEPARATOR:
     description: Separator of multiline messages.
     default: ' '
-    required: true
+    required: false
   FORMAT:
     description: Format of git log.
     default: '%B'
-    required: true
+    required: false
   SET_ENV_NAME:
     description: Env name.
     default: COMMIT_MESSAGE
