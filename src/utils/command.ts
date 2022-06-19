@@ -1,7 +1,7 @@
-import {Context} from '@actions/github/lib/context';
-import {Command, Utils} from '@technote-space/github-action-helper';
-import {Logger} from '@technote-space/github-action-log-helper';
-import {getInput} from '@actions/core' ;
+import { Context } from '@actions/github/lib/context';
+import { Command, Utils } from '@technote-space/github-action-helper';
+import { Logger } from '@technote-space/github-action-log-helper';
+import { getInput } from '@actions/core' ;
 
 // 1. get directly
 //   1. payload.head_commit.message		// push
@@ -14,7 +14,7 @@ const refsPrefix           = 'refs/';
 const branchRefsPrefix     = `${refsPrefix}heads/`;
 const getRawInput          = (name: string): string => process.env[`INPUT_${name.replace(/ /g, '_').toUpperCase()}`] || '';
 const getSeparator         = (): string => getRawInput('SEPARATOR');
-const getFormat            = (): string => getInput('FORMAT', {required: true});
+const getFormat            = (): string => getInput('FORMAT', { required: true });
 const getHeadCommitMessage = (context: Context): string | undefined => context.payload.head_commit?.message;
 const normalizeRef         = (ref: string): string => Utils.getPrefixRegExp(refsPrefix).test(ref) ? ref : `${branchRefsPrefix}${ref}`;
 
@@ -46,8 +46,8 @@ export const getCommitMessage = async(context: Context): Promise<string> => {
     return headCommitMessage;
   }
 
-  const command    = new Command(new Logger());
-  const {ref, sha} = getTarget(context);
+  const command      = new Command(new Logger());
+  const { ref, sha } = getTarget(context);
   if (Utils.getPrefixRegExp(branchRefsPrefix).test(ref)) {
     await command.execAsync({
       command: 'git fetch',

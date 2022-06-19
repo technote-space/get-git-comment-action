@@ -9,7 +9,7 @@ import {
   execCalledWith,
   setChildProcessParams,
 } from '@technote-space/github-action-test-helper';
-import {getCommitMessage} from '../../src/utils/command';
+import { getCommitMessage } from './command';
 
 const rootDir = path.resolve(__dirname, '../..');
 

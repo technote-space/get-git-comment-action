@@ -13,8 +13,8 @@ import {
   spyOnExportVariable,
   exportVariableCalledWith,
 } from '@technote-space/github-action-test-helper';
-import {Logger} from '@technote-space/github-action-log-helper';
-import {setResult, execute} from '../src/process';
+import { Logger } from '@technote-space/github-action-log-helper';
+import { setResult, execute } from './process';
 
 const rootDir = path.resolve(__dirname, '..');
 
@@ -32,7 +32,7 @@ describe('setResult', () => {
       '::set-output name=message::test message',
     ]);
     exportVariableCalledWith(mockEnv, [
-      {name: 'COMMIT_MESSAGE', val: 'test message'},
+      { name: 'COMMIT_MESSAGE', val: 'test message' },
     ]);
   });
 
@@ -98,7 +98,7 @@ describe('execute', () => {
       '::endgroup::',
     ]);
     exportVariableCalledWith(mockEnv, [
-      {name: 'COMMIT_MESSAGE', val: 'test1 test2 test3'},
+      { name: 'COMMIT_MESSAGE', val: 'test1 test2 test3' },
     ]);
   });
 });

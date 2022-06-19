@@ -1,7 +1,7 @@
-import {Context} from '@actions/github/lib/context';
-import {Logger} from '@technote-space/github-action-log-helper';
-import {exportVariable, getInput, setOutput} from '@actions/core' ;
-import {getCommitMessage} from './utils/command';
+import { Context } from '@actions/github/lib/context';
+import { Logger } from '@technote-space/github-action-log-helper';
+import { exportVariable, getInput, setOutput } from '@actions/core' ;
+import { getCommitMessage } from './utils/command';
 
 export const setResult = (message: string): void => {
   setOutput('message', message);
