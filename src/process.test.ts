@@ -12,6 +12,8 @@ import {
   execContains,
   spyOnExportVariable,
   exportVariableCalledWith,
+  spyOnSetOutput,
+  setOutputCalledWith,
 } from '@technote-space/github-action-test-helper';
 import { describe, it } from 'vitest';
 import { setResult, execute } from './process';
@@ -24,28 +26,26 @@ describe('setResult', () => {
   it('should set result', () => {
     const mockStdout = spyOnStdout();
     const mockEnv    = spyOnExportVariable();
+    const mockOutput = spyOnSetOutput();
 
     setResult('test message');
 
-    stdoutCalledWith(mockStdout, [
-      '',
-      '::set-output name=message::test message',
-    ]);
+    stdoutCalledWith(mockStdout, []);
     exportVariableCalledWith(mockEnv, [
       { name: 'COMMIT_MESSAGE', val: 'test message' },
     ]);
+    setOutputCalledWith(mockOutput, [{ name: 'message', value: 'test message' }]);
   });
 
   it('should set result without env', () => {
     process.env.INPUT_SET_ENV_NAME = '';
     const mockStdout               = spyOnStdout();
+    const mockOutput               = spyOnSetOutput();
 
     setResult('');
 
-    stdoutCalledWith(mockStdout, [
-      '',
-      '::set-output name=message::',
-    ]);
+    stdoutCalledWith(mockStdout, []);
+    setOutputCalledWith(mockOutput, [{ name: 'message', value: '' }]);
   });
 });
 
@@ -57,6 +57,7 @@ describe('execute', () => {
     const mockExec   = spyOnSpawn();
     const mockStdout = spyOnStdout();
     const mockEnv    = spyOnExportVariable();
+    const mockOutput = spyOnSetOutput();
     setChildProcessParams({
       stdout: (command: string): string => {
         if (command.startsWith('git log')) {
@@ -91,8 +92,6 @@ describe('execute', () => {
       '  >> test2',
       '  >> ',
       '  >> test3',
-      '',
-      '::set-output name=message::test1 test2 test3',
       '::group::Dump output',
       '"message: "',
       '::endgroup::',
@@ -100,5 +99,6 @@ describe('execute', () => {
     exportVariableCalledWith(mockEnv, [
       { name: 'COMMIT_MESSAGE', val: 'test1 test2 test3' },
     ]);
+    setOutputCalledWith(mockOutput, [{ name: 'message', value: 'test1 test2 test3' }]);
   });
 });
