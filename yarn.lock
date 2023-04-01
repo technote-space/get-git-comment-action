@@ -28,9 +28,9 @@
     tunnel "^0.0.6"
 
 "@babel/code-frame@^7.0.0":
-  version "7.18.6"
-  resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.18.6.tgz#3b25d38c89600baa2dcc219edfa88a74eb2c427a"
-  integrity sha512-TDCmlK5eOvH+eH7cdAFlNXeVJqWIQ7gW9tY1GJIpUtFb6CmjVyq2VM3u71bOyR8CRihcCgMUYoDNyLXao3+70Q==
+  version "7.21.4"
+  resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.21.4.tgz#d0fa9e4413aca81f2b23b9442797bda1826edb39"
+  integrity sha512-LYvhNKfwWSPpocw8GI7gpK2nq3HSDuEPC/uSYaALSJu9xjsalaaYFOq0Pwt5KmVqwEbZlDu81aLXwBOmD/Fv9g==
   dependencies:
     "@babel/highlight" "^7.18.6"
 
@@ -585,22 +585,22 @@
     sprintf-js "^1.1.2"
 
 "@technote-space/github-action-log-helper@^0.2.10", "@technote-space/github-action-log-helper@^0.2.11":
-  version "0.2.12"
-  resolved "https://registry.yarnpkg.com/@technote-space/github-action-log-helper/-/github-action-log-helper-0.2.12.tgz#9fa3a8937285efd2df586e09396063c71b50981c"
-  integrity sha512-f1+0pgHzAYGOaYviH9BB5uWZoxwJ2SX5e30B9XaLi9U8rj0AYfwf9TNpocgjTmgwrTHgaogdbI635+5/AR4BnQ==
+  version "0.2.13"
+  resolved "https://registry.yarnpkg.com/@technote-space/github-action-log-helper/-/github-action-log-helper-0.2.13.tgz#ba2b692f6e26aa92fae43aea9c3ea6e784c2313e"
+  integrity sha512-ogs4H5VUC+oH/meSdH9LzOuBj9IHuo8MM1SfZ+G7JxcAbZyUr/EsRuO3Z2oxf5YlEYnlEY//FEodbXxJeTR3FA==
   dependencies:
     "@actions/core" "^1.10.0"
     sprintf-js "^1.1.2"
 
-"@technote-space/github-action-test-helper@^0.11.4":
-  version "0.11.4"
-  resolved "https://registry.yarnpkg.com/@technote-space/github-action-test-helper/-/github-action-test-helper-0.11.4.tgz#a098fdd3fffcdf713bd0f0e2e2d3643509252a2d"
-  integrity sha512-2GjPGR+gFxSXI9k4yb27f/y1fNRPBD9IK4TLA6DwrF9hQQqswbzaJV9WmGRZmeNRcOk/Y6Jsemz2o45yCZrlsg==
+"@technote-space/github-action-test-helper@^0.11.5":
+  version "0.11.5"
+  resolved "https://registry.yarnpkg.com/@technote-space/github-action-test-helper/-/github-action-test-helper-0.11.5.tgz#e00cb3fe6f155aa15fcf88306002b45b124ac203"
+  integrity sha512-jgCIACEdwgnrPtC9f/7yRLyrh0CMELDQhR66g8kCPtf/LC4iJgwc48mjfb+phCDzVWAjwR5RNVUzOvyJIfiv0w==
   dependencies:
     "@actions/core" "^1.10.0"
     "@actions/github" "^5.1.1"
     js-yaml "^4.1.0"
-    vitest "^0.29.7"
+    vitest "^0.29.8"
 
 "@technote-space/release-github-actions-cli@^1.9.5":
   version "1.9.5"
@@ -3541,10 +3541,10 @@ typed-array-length@^1.0.4:
     for-each "^0.3.3"
     is-typed-array "^1.1.9"
 
-"typescript@^4.6.4 || ^5.0.0", typescript@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.0.2.tgz#891e1a90c5189d8506af64b9ef929fca99ba1ee5"
-  integrity sha512-wVORMBGO/FAs/++blGNeAVdbNKtIh1rbBL2EyQ1+J9lClJ93KiiKe8PmFIVdXhHcyv44SL9oglmfeSsndo0jRw==
+"typescript@^4.6.4 || ^5.0.0", typescript@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.0.3.tgz#fe976f0c826a88d0a382007681cbb2da44afdedf"
+  integrity sha512-xv8mOEDnigb/tN9PSMTwSEqAnUvkoXMQlicOb0IUVDBSQCgBSaAAROUZYy2IcUy5qU6XajK5jjjO7TMWqBTKZA==
 
 ufo@^1.1.1:
   version "1.1.1"
@@ -3634,7 +3634,7 @@ vite-node@0.29.8:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vitest@^0.29.7, vitest@^0.29.8:
+vitest@^0.29.8:
   version "0.29.8"
   resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.29.8.tgz#9c13cfa007c3511e86c26e1fe9a686bb4dbaec80"
   integrity sha512-JIAVi2GK5cvA6awGpH0HvH/gEG9PZ0a/WoxdiV3PmqK+3CjQMf8c+J/Vhv4mdZ2nRyXFw66sAg6qz7VNkaHfDQ==
